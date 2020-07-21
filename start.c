@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 int main() {
-    int a, b;
+    int a;
+    int b;
+    double c;
+    
     a = 10;
     b = 3;
-    printf("a + b 는 : %d \n", a + b);
-    printf("a - b 는 : %d \n", a - b);
-    printf("a * b 는 : %d \n", a * b);
-    printf("a / b 는 : %d \n", a / b);
-    printf("a %% b 는 : %d \n", a % b); //% 는 오직 정수형 데이터에서만 연산이 가능
-    // printf("a / b 는 : %f \n", a / b); //해서는 안될 짓
-    printf("a / b 는 : %f \n", a / b);
+    c = 3;
+    // printf("a / b 는 : %f \n", a / b); //해서는 안될 짓. 자료형이 맞지않음
+    printf("a / c 는 : %f \n", a / c);
+    printf("c / a 는 : %f \n", c / a);
 
     return 0;
 }
