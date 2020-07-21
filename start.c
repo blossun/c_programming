@@ -1,35 +1,25 @@
-/* 크기 비교하기 */
+/* 논리 연산자 */
 #include <stdio.h>
 int main() {
-  int i, j;
+    int a;
+    printf("숫자 입력 : ");
+    scanf("%d", &a);
 
-  printf("크기를 비교할 두 수를 입력해 주세요 : ");
-  scanf("%d %d", &i, &j);
+    if (a>=10 && a<20) { //논리합
+        printf("%d는 10이상 20미만인 수\n", a);
+    }
 
-  if (i > j)  // i 가 j 보다 크면
-  {
-    printf("%d 는 %d 보다 큽니다 \n", i, j);
-  }
-  if (i < j)  // i 가 j 보다 작으면
-  {
-    printf("%d 는 %d 보다 작습니다 \n", i, j);
-  }
-  if (i >= j)  // i 가 j 보다 크거나 같으면
-  {
-    printf("%d 는 %d 보다 크거나 같습니다 \n", i, j);
-  }
-  if (i <= j)  // i 가 j 보다 작거나 같으면
-  {
-    printf("%d 는 %d 보다 작거나 같습니다 \n", i, j);
-  }
-  if (i == j)  // i 와 j 가 같으면
-  {
-    printf("%d 는 %d 와(과) 같습니다 \n", i, j);
-  }
-  if (i != j)  // i 와 j 가 다르면
-  {
-    printf("%d 는 %d 와(과) 다릅니다 \n", i, j);
-  }
+    int height, weight;
+    printf("당신의 키와 몸무게를 각각 입력해 주세요 : ");
+    scanf("%d %d", &height, &weight);
 
-  return 0;
+    if (height >= 190 || weight >= 100) { //논리곱
+        printf("당신은 '거구' 입니다. \n");
+    }
+
+    if (!(height >= 190 || weight >= 100)) { //논리부정
+        printf("당신은 거구가 아닙니다. \n");
+    }
+
+    return 0;
 }
