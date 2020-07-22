@@ -1,30 +1,18 @@
-/* 과연 될까? */
+/* 상수 */
 #include <stdio.h>
 int main() {
-  int total;
-  printf("전체 학생수 : ");
-  scanf("%d", &total);
-  int arr[total];
-  int i, ave = 0;
+    int a = 3;
+    const int b = a;
 
-  for (i = 0; i < total; i++) {
-    printf("%d 번째 학생의 성적은? ", i + 1);
-    scanf("%d", &arr[i]);
-  }
-  for (i = 0; i < total; i++) {
-    ave = ave + arr[i];
-  }
+    char c[b]; //상수로 배열의 크기지정 ?? 될까?? 된다..!
 
-  ave = ave / total;
-  printf("전체 학생의 평균은 : %d \n", ave);
+    for (int i=0; i<b; i++) {
+        c[i] = 65 + i;
+    }
 
-  for (i = 0; i < total; i++) {
-    printf("학생 %d : ", i + 1);
-    if (arr[i] >= ave)
-      printf("합격 \n");
-    else
-      printf("불합격 \n");
-  }
+    for (int i=0; i<b; i++) {
+        printf("c[%d] : %c\n", i, c[i]);
+    }
 
-  return 0;
+    return 0;
 }
