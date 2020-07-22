@@ -1,30 +1,31 @@
-/* swich - case */
+/* switch 문자 비교 */
+// 컴퓨터는 문자를 모두 숫자로 처리한 뒤, 우리에게 보여줄 때 에만 문자로 보여주는 것
 #include <stdio.h>
-
 int main() {
-    int input;
+  char input;
 
-    printf("마이펫 업그레이드\n");
-    printf("무엇을 하실 것인지 입력하세요 \n");
-    printf("1. 밥주기 \n");
-    printf("2. 씻기기 \n");
-    printf("3. 재우기 \n");
+  printf("(소문자) 알파벳 읽기\n");
+  printf("알파벳 : ");
 
-    scanf("%d", &input);
+  scanf("%c", &input);
 
-    switch(input) {
-        case 1:
-            printf("냠냠 \n");
-            break;
-        case 2:
-            printf("깨운 \n");
-            break;
-        case 3:
-            printf("zzzz \n");
-            break;
-        default:
-            printf("나 뭐할까? \n");
-    }
+  switch (input) {
+    case 97: //case 'a': 와 같다.
+      printf("에이 \n");
+      break;
 
-    return 0;
+    case 'b':
+      printf("비 \n");
+      break;
+
+    case 'c':
+      printf("씨 \n");
+      break;
+
+    default:
+      printf("죄송해요.. 머리가 나빠서 못 읽어요  \n");
+      break;
+  }
+
+  return 0;
 }
