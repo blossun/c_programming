@@ -1,18 +1,9 @@
-/* 상수 */
+/* 초기화 되지 않은 값 */
 #include <stdio.h>
 int main() {
-    int a = 3;
-    const int b = a;
+  int arr[3];
+  arr[0] = 1;
+  printf("니 값은 모니 : %d", arr[1]);  // arr[0] 이 아닌 arr[1] 을 출력
 
-    char c[b]; //상수로 배열의 크기지정 ?? 될까?? 된다..!
-
-    for (int i=0; i<b; i++) {
-        c[i] = 65 + i;
-    }
-
-    for (int i=0; i<b; i++) {
-        printf("c[%d] : %c\n", i, c[i]);
-    }
-
-    return 0;
+  return 0;
 }
