@@ -1,18 +1,31 @@
-/* do-while 1~100합 */
+/* 문제1 */
+//   *
+//  ***
+// *****
 #include <stdio.h>
 int main() {
-    // int i,sum=0; //둘다 0으로 초기화 안되네...
-    int i=0, sum=0;
-    // int i, sum;
-    // i = sum = 0;
-    printf("i : %d, sum : %d \n", i, sum);
+    int n;
+    printf("숫자 N 입력 : ");
+    scanf("%d", &n);
 
-    do {
-        sum += i;
-        i++;
-    }while(i<=100);
+    int width = n*2-1;
 
-    printf("1~100 까지의 합 : %d \n", sum);
+    for (int i=1; i<=n; i++) {
+
+        for (int j=1; j<=(n-i+1); j++) {
+            printf(" ");
+        }
+        
+        for (int j=1; j<=(i*2-1); j++) {
+            printf("*");
+        }
+
+        for (int j=1; j<=(n-i+1); j++) {
+            printf(" ");
+        }
+
+        printf("\n");
+    }
 
     return 0;
 }
