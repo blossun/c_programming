@@ -1,27 +1,16 @@
-/* 문제2 */
-// *****
-//  ***
-//   *
+/* 문제3 */
+// 1000 이하의 3 또는 5 의 배수인 자연수들의 합을 구한다.
 #include <stdio.h>
 int main() {
-    int n;
-    printf("숫자 N 입력 : ");
-    scanf("%d", &n);
+    int sum=0;
 
-    int width = n*2-1;
-
-    for (int i=n; i>=1; i--) { //증가순서만 변경
-
-        for (int j=1; j<=(n-i+1); j++) {
-            printf(" ");
+    for (int i=1; i<=1000; i++) {
+        if (i%3==0 || i%5==0) {
+            sum += i;
         }
-
-        for (int j=1; j<=(i*2-1); j++) {
-            printf("*");
-        }
-
-        printf("\n");
     }
+
+    printf("1000 이하의 3 또는 5 의 배수인 자연수들의 합 : %d\n", sum);
 
     return 0;
 }
