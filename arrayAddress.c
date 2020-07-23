@@ -1,12 +1,11 @@
-/* 배열과 포인터 */
+/* [] 연산자 */
 #include <stdio.h>
 
 int main() {
-    int arr[3] = {1, 2, 3};
-    int* parr = arr;
+    int arr[5] = {1, 2, 3, 4, 5};
 
-    printf("sizeof(arr) : %lu \n", sizeof(arr));
-    printf("sizeof(parr) : %lu \n", sizeof(parr));
+    printf("a[3] : %d \n", arr[3]);
+    printf("*(arr+3) : %d \n", *(arr+3));
 
     return 0;
 }
