@@ -1,19 +1,18 @@
 /* 포인터의 포인터 */
 #include <stdio.h>
+
 int main() {
-    int a;
-    int *pa;
-    int **ppa;
+    int arr[3] = {1, 2, 3};
+    int (*parr)[3] = &arr; //크기가 3인 배열을 가리키는 포인터
+    //int *parr[3]; //int * 원소(포인터) 3개를 가지는 배열을 정의
+    int *parr2 = arr;
 
-    pa = &a;
-    ppa = &pa;
-
-    a = 3;
-
-    printf("a : %d // *pa : %d // **pa : %d \n", a, *pa, **ppa);
-    printf("&a : %p // pa : %p // *ppa : %p \n", &a, pa, *ppa);
-    printf("&a : %p // &*pa : %p // &**pa : %p \n", &a, &*pa, &**ppa); //위와 동일 &와 *는 한쌍씩 상쇄된다.
-    printf("&pa : %p // ppa : %p \n", &pa, ppa);
+    printf("arr[1] : %d \n", arr[1]); //2
+    printf("parr[1] : %d \n", (*parr)[1]); //2
+    printf("parr : %p, arr : %p \n", parr, &arr);
+    // printf("(*parr+1) : %d \n", (*parr+1)); //컴파일 에러
+    // printf("*(parr+1) : %d \n", *(parr+1)); //컴파일 에러
+    printf("*(parr2+1) : %d \n", *(parr2+1)); //2
 
     return 0;
 }
