@@ -9,9 +9,15 @@ int main() {
     int *parr = arr;
     int sum = 0;
 
-    while (parr - arr <= 9) {
+    // while (parr - arr <= 9) {
+    //     sum += (*parr);
+    //     parr++; // '포인터가 가리키는 타입의 크기'만큼 더해진다. 즉, int 형 포인터 이므로 4 가 더해지게되서, 배열의 그 다음 원소를 가리킬 수 있게 됩니다.
+    // }
+
+    for (int i=0; i<9; i++) {
         sum += (*parr);
-        parr++; // '포인터가 가리키는 타입의 크기'만큼 더해진다. 즉, int 형 포인터 이므로 4 가 더해지게되서, 배열의 그 다음 원소를 가리킬 수 있게 됩니다.
+        arr += 4;
+        parr = arr;
     }
 
     printf("내 시험 점수 평균 : %d \n", sum/10);
