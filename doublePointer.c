@@ -1,39 +1,35 @@
-/* 포인터가 가리키는 변수를 서로 변경 */
+/*  2 차원 배열의 각 원소를 1 씩 증가시키는 함수 */
 #include <stdio.h>
-
-void pswqp(int **ppa, int **ppb);
+void add (int (*parr)[2], int row );
 
 int main()
 {
-    int a, b;
-    int *pa, *pb;
-    pa = &a;
-    pb = &b;
+    int arr[3][2];
 
-    printf("pa 가 가리키는 변수의 주소값 : %p \n", pa);
-    printf("pa 의 주소값 : %p \n \n", &pa);
-    printf("pb 가 가리키는 변수의 주소값 : %p \n", pb);
-    printf("pb 의 주소값 : %p \n", &pb);
+    for (int i=0; i<3; i++) {
+        for (int j=0; j<2; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
 
-    printf("----------swqp 호출 ------------\n");
-    pswqp(&pa, &pb);
-    printf("----------swqp 종료 ------------\n");
+    add(arr, 3);
 
-    printf("pa 가 가리키는 변수의 주소값 : %p \n", pa);
-    printf("pa 의 주소값 : %p \n \n", &pa);
-    printf("pb 가 가리키는 변수의 주소값 : %p \n", pb);
-    printf("pb 의 주소값 : %p \n", &pb);
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("arr[%d][%d] : %d \n", i, j, arr[i][j]);
+        }
+    }
 
     return 0;
 }
 
-void pswqp(int **ppa, int **ppb) {
-    int *temp = *ppa;
-
-    printf("ppa가 가리키는 변수의 주소값 : %p \n", ppa);
-    printf("ppb가 가리키는 변수의 주소값 : %p \n", ppb);
-
-    *ppa = *ppb;
-    *ppb = temp;
-
+// void add (int (*parr)[2], int row ) { 
+void add (int parr[][2], int row ) { //위와 동일 //함수의 인자에서만 허용되는 표현
+    //열의 갯수를 여기서 하드코딩하는건 이상한데
+    //2차원 배열을 가리키는 포인터
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < 2; j++) {
+            parr[i][j]++;
+        }
+    }
 }
