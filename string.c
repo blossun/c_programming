@@ -1,4 +1,4 @@
-/* 이상한 scanf - %s는 ?? */
+/* 버퍼비우기 */
 #include <stdio.h>
 
 int main() {
@@ -7,6 +7,9 @@ int main() {
 
     printf("숫자를 입력하세요 : ");
     scanf("%d", &num);
+
+    // fflush(stdin); // 버퍼비우기 //비추
+    printf("%c", getchar());
 
     printf("문자열을 입력하세요 : ");
     scanf("%s", str); 
