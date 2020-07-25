@@ -1,17 +1,15 @@
-/* 문자열 리터럴과 문자 배열*/
+/* 이상한 scanf */
 #include <stdio.h>
 
 int main() {
-    char *p_str = "abcdefgh";
-    char str_array[] = {"qwerasdf"};
-    printf("%s \n", p_str);
-    printf("%s \n", str_array);
+    int num;
+    char c;
 
+    printf("숫자를 입력하세요 : ");
+    scanf("%d", &num);
 
-    // p_str[0] = 'x';
-    str_array[0] = 'x';
-    printf("%s \n", p_str);
-    printf("%s \n", str_array);
+    printf("문자를 입력하세요 : ");
+    scanf("%c", &c);
 
     return 0;
 }
