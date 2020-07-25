@@ -46,9 +46,8 @@
         {
             "label": "Open Terminal",
             "type": "shell",
-            // "command": "osascript -e 'tell application \"Terminal\"\ndo script \"echo hello\"\nend tell'",
             "command": "osascript -e 'tell application \"iTerm\"\ncreate window with default profile\nend tell'",
             "problemMatcher": []
-          }
+        }
     ]
 }
