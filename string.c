@@ -1,12 +1,23 @@
-/* 문자열 */
+/* 구조체 */
 #include <stdio.h>
 
-int main() {
-  char str[] = "hello";
-  char *pstr = "goodbye";
+struct Human {
+    int age;
+    int height;
+    int weight;
+};
 
-  str[1] = 'a';
-//   pstr[1] = 'a'; //디버깅하면 여기서 에러나는 것 확인가능. 리터럴값을 수정하려고 하기 때문
+int main() {
+    struct Human Holar;
+
+    Holar.age = 99;
+    Holar.height = 170;
+    Holar.weight = 55;
+
+    printf("Holar에 대한 정보 \n");
+    printf("나이 : %d \n", Holar.age);
+    printf("키  : %d \n", Holar.height);
+    printf("몸무게 : %d \n", Holar.weight);
 
   return 0;
 }
