@@ -1,18 +1,17 @@
-/* 버퍼비우기 */
+/* c 에 무엇이 들어가는지 살짝 보아야 하므로 코드를 약간 수정했습니다 */
 #include <stdio.h>
-
 int main() {
-    int num;
-    char str[30];
+  int num, i;
+  char c;
 
-    printf("숫자를 입력하세요 : ");
-    scanf("%d", &num);
+  printf("숫자를 입력하세요 : ");
+  scanf("%d", &num);
 
-    // fflush(stdin); // 버퍼비우기 //비추
-    printf("%c", getchar());
+  getchar();
 
-    printf("문자열을 입력하세요 : ");
-    scanf("%s", str); 
+  printf("문자를 입력하세요 : ");
+  scanf("%c", &c);
 
-    return 0;
+  printf("입력한 문자 : %c", c);
+  return 0;
 }
