@@ -1,3 +1,5 @@
+#include "NameCard.h"
+
 #ifndef __ARRAY_LIST__SSUN_H__
 #define __ARRAY_LIST__SSUN_H__
 
@@ -5,7 +7,7 @@
 #define FALSE 0
 
 #define LIST_LEN 100
-typedef int LData;
+typedef NameCard *LData;
 
 typedef struct __ArrayList
 {
