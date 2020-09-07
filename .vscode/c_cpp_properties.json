@@ -3,7 +3,8 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/data_structures/references/Data_Structure_Src/Ch04/Prob04-4"
             ],
             "defines": [],
             "macFrameworkPath": [
