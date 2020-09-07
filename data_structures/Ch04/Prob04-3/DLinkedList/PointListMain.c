@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "ArrayList.h"
+#include "DLinkedList.h"
 #include "Point.h"
 
 int main(void)
@@ -11,7 +11,7 @@ int main(void)
 
 	ListInit(&list);
 
-	/*** 4°³ÀÇ µ¥ÀÌÅÍ ÀúÀå ***/
+	/*** 4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ***/
 	ppos = (Point*)malloc(sizeof(Point));
 	SetPointPos(ppos, 2, 1);
 	LInsert(&list, ppos);
@@ -28,19 +28,19 @@ int main(void)
 	SetPointPos(ppos, 3, 2);
 	LInsert(&list, ppos);
 
-	/*** ÀúÀåµÈ µ¥ÀÌÅÍÀÇ Ãâ·Â ***/
-	printf("ÇöÀç µ¥ÀÌÅÍÀÇ ¼ö: %d \n", LCount(&list));
+	/*** ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ***/
+	printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: %d \n", LCount(&list));
 
 	if(LFirst(&list, &ppos))
 	{
 		ShowPointPos(ppos);
-		
+
 		while(LNext(&list, &ppos))
 			ShowPointPos(ppos);
 	}
 	printf("\n");
 
-	/*** xpos°¡ 2ÀÎ ¸ðµç µ¥ÀÌÅÍ »èÁ¦ ***/
+	/*** xposï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ***/
 	compPos.xpos=2;
 	compPos.ypos=0;
 
@@ -51,8 +51,8 @@ int main(void)
 			ppos=LRemove(&list);
 			free(ppos);
 		}
-		
-		while(LNext(&list, &ppos)) 
+
+		while(LNext(&list, &ppos))
 		{
 			if(PointComp(ppos, &compPos)==1)
 			{
@@ -62,13 +62,13 @@ int main(void)
 		}
 	}
 
-	/*** »èÁ¦ ÈÄ ³²Àº µ¥ÀÌÅÍ ÀüÃ¼ Ãâ·Â ***/
-	printf("ÇöÀç µ¥ÀÌÅÍÀÇ ¼ö: %d \n", LCount(&list));
+	/*** ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ ***/
+	printf("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: %d \n", LCount(&list));
 
 	if(LFirst(&list, &ppos))
 	{
 		ShowPointPos(ppos);
-		
+
 		while(LNext(&list, &ppos))
 			ShowPointPos(ppos);
 	}

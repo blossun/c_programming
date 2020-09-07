@@ -14,7 +14,7 @@ int main(void)
 	LInsert(&list, 33);
 
 	// 저장된 데이터 전체 출력
-	printf("���� �������� ��: %d \n", LCount(&list));
+	printf("전체 데이터 출력 %d \n", LCount(&list));
 
 	if(LFirst(&list, &data))    // 첫번째 데이터
 	{
@@ -38,8 +38,9 @@ int main(void)
 		}
 	}
 
+	printf("[test] end of remvoe 22");
 	// 삭제 후 남아있는 데이터 전체 출력
-	printf("���� �������� ��: %d \n", LCount(&list));
+	printf("전체 데이터 출력: %d \n", LCount(&list));
 
 	if(LFirst(&list, &data))
 	{
