@@ -59,34 +59,25 @@ Employee *WhoIsNightDuty(List *plist, char *name, int day)
 
 	count = LCount(plist);
 	LFirst(plist, &duty);
-	if (strcmp(duty->name, name) == 0)
+	if (strcmp(duty->name, name) != 0)
 	{
-		i = 0;
-		while (i < day)
+		j = 0;
+		while (j++ < count - 1)
 		{
 			LNext(plist, &duty);
-			printf("duty name : %s\n", duty->name);
-			i++;
+			if (strcmp(duty->name, name) == 0)
+				break;
 		}
-		return duty;
+		if (j >= count - 1)
+		return NULL;
 	}
-	j = 0;
-	while (j < count - 1)
-	{
+
+	i = 0;
+	while (i++ < day)
 		LNext(plist, &duty);
-		if (strcmp(duty->name, name) == 0)
-		{
-			i = 0;
-			while (i < day)
-			{
-				LNext(plist, &duty);
-				printf("duty name : %s\n", duty->name);
-				i++;
-			}
-			return duty;
-		}
-	}
-	return NULL;
+
+	return duty;
+
 }
 
 void ShowEmployee(Employee *pem)
