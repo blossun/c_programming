@@ -10,7 +10,7 @@ typedef struct _bTreeNode
 	struct _bTreeNode * right;
 } BTreeNode;
 
-/*** BTreeNode °ü·Ã ¿¬»êµé ****/
+/*** BTreeNode ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ****/
 BTreeNode * MakeBTreeNode(void);
 BTData GetData(BTreeNode * bt);
 void SetData(BTreeNode * bt, BTData data);
@@ -20,5 +20,12 @@ BTreeNode * GetRightSubTree(BTreeNode * bt);
 
 void MakeLeftSubTree(BTreeNode * main, BTreeNode * sub);
 void MakeRightSubTree(BTreeNode * main, BTreeNode * sub);
+
+typedef void (* VisitFuncPtr)(BTData data);
+
+
+void InorderTraverse(BTreeNode *bt, VisitFuncPtr action);
+void PreorderTraverse(BTreeNode *bt, VisitFuncPtr action);
+void PostorderTraverse(BTreeNode *bt, VisitFuncPtr action);
 
 #endif

@@ -45,3 +45,34 @@ void MakeRightSubTree(BTreeNode * main, BTreeNode * sub)
 
 	main->right = sub;
 }
+
+// 이진트리 순회 추가
+void InorderTraverse(BTreeNode *bt, VisitFuncPtr action)
+{
+	if (bt == NULL) // 공집합 노드인지 확인해서 공집합 노드면 재귀 탈출!!
+		return ;
+
+	InorderTraverse(bt->left, action); // 1단계 : 왼쪽 서브 트리 순회
+	action(bt->data); // 2단계 : 루트노드 방문 -> action 실행
+	InorderTraverse(bt->right, action); // 3단계 : 오른쪽 서브 트리 순회
+}
+
+void PreorderTraverse(BTreeNode *bt, VisitFuncPtr action)
+{
+	if (bt == NULL)
+		return ;
+
+	action(bt->data);
+	PreorderTraverse(bt->left, action);
+	PreorderTraverse(bt->right, action);
+}
+
+void PostorderTraverse(BTreeNode *bt, VisitFuncPtr action)
+{
+	if (bt == NULL)
+		return ;
+
+	PostorderTraverse(bt->left, action);
+	PostorderTraverse(bt->right, action);
+	action(bt->data);
+}
