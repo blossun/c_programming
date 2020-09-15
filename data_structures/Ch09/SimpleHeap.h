@@ -7,24 +7,19 @@
 #define HEAP_LEN	100
 
 typedef char HData;
-typedef int Priority;
-
-typedef struct _heapElem // 힙에 저장될 데이터의 모델
-{
-	Priority pr;	//값이 작을 수록 높은 우선순위
-	HData data;
-} HeapElem;
+typedef int PriorityComp(HData d1, HData d2);
 
 typedef struct _heap
 {
+	PriorityComp * comp;
 	int numOfData;
-	HeapElem heapArr[HEAP_LEN];
+	HData heapArr[HEAP_LEN];
 } Heap;
 
-void HeapInit(Heap * ph);
+void HeapInit(Heap * ph, PriorityComp pc);
 int HIsEmpty(Heap * ph);
 
-void HInsert(Heap * ph, HData data, Priority pr);
+void HInsert(Heap * ph, HData data);
 HData HDelete(Heap * ph);
 
 #endif
