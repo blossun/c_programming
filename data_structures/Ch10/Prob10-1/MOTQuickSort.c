@@ -5,7 +5,7 @@ void Swap(int arr[], int idx1, int idx2)
 	int temp = arr[idx1];
 	arr[idx1] = arr[idx2];
 	arr[idx2] = temp;
-}
+}	
 
 int MedianOfThree(int arr[], int left, int right)
 {
@@ -25,39 +25,39 @@ int MedianOfThree(int arr[], int left, int right)
 
 int Partition(int arr[], int left, int right)
 {
-	int pIdx = MedianOfThree(arr, left, right);   // ï¿½Ç¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!
+	int pIdx = MedianOfThree(arr, left, right);   // ÇÇ¹þÀ» ¼±ÅÃ!
 	int pivot = arr[pIdx];
 
 	int low = left+1;
 	int high = right;
 
-	Swap(arr, left, pIdx);    // ï¿½Ç¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+	Swap(arr, left, pIdx);    // ÇÇ¹þÀ» °¡Àå ¿ÞÂÊÀ¸·Î ÀÌµ¿
 
-	printf("í”¼ë²— : %d \n", pivot);
+	printf("ÇÇ¹þ: %d \n", pivot);
 
-	while(low <= high)    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
-	{
+	while(low <= high)    // ±³Â÷µÇÁö ¾ÊÀ» ¶§±îÁö ¹Ýº¹
+	{	
 		while(pivot >= arr[low] && low <= right)
 			low++;
 
 		while(pivot <= arr[high] && high >= (left+1))
 			high--;
 
-		if(low <= high)    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ Swap ï¿½ï¿½ï¿½ï¿½
-			Swap(arr, low, high);    // lowï¿½ï¿½ highï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
+		if(low <= high)    // ±³Â÷µÇÁö ¾ÊÀº »óÅÂ¶ó¸é Swap ½ÇÇà
+			Swap(arr, low, high);    // low¿Í high°¡ °¡¸®Å°´Â ´ë»ó ±³È¯
 	}
 
-	Swap(arr, left, high);    // ï¿½Ç¹ï¿½ï¿½ï¿½ highï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
-	return high;    // ï¿½Å°ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
+	Swap(arr, left, high);    // ÇÇ¹þ°ú high°¡ °¡¸®Å°´Â ´ë»ó ±³È¯
+	return high;    // ¿Å°ÜÁø ÇÇ¹þÀÇ À§Ä¡ Á¤º¸ ¹ÝÈ¯
 }
 
 void QuickSort(int arr[], int left, int right)
 {
 	if(left < right)
 	{
-		int pivot = Partition(arr, left, right);    // ï¿½Ñ·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-		QuickSort(arr, left, pivot-1);    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-		QuickSort(arr, pivot+1, right);    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		int pivot = Partition(arr, left, right);    // µÑ·Î ³ª´²¼­ 
+		QuickSort(arr, left, pivot-1);    // ¿ÞÂÊ ¿µ¿ªÀ» Á¤·Ä
+		QuickSort(arr, pivot+1, right);    // ¿À¸¥ÂÊ ¿µ¿ªÀ» Á¤·Ä
 	}
 }
 
