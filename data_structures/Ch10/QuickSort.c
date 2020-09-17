@@ -7,12 +7,34 @@ void Swap(int arr[], int idx1, int idx2)
 	arr[idx2] = temp;
 }
 
+int MedianOfThree(int arr[], int left, int right) // 중간값을 결정하는 함수
+{
+	int samples[3] = {left, (left+right)/2, right}; //인덱스 값으로 배열을 구성
+
+	// if문 3개로 데이터를 정렬
+	if(arr[samples[0]] > arr[samples[1]])
+		Swap(samples, 0, 1);
+
+	if(arr[samples[1]] > arr[samples[2]])
+		Swap(samples, 1, 2);
+
+	if(arr[samples[0]] > arr[samples[1]])
+		Swap(samples, 0, 1);
+
+	return samples[1];
+}
+
 int Partition(int arr[], int left, int right)
 {
-	int pivot = arr[left];    // 피벗의 위치는 가장 왼쪽 (중간값이 선택되는 것이 좋다.)
+	int pIdx = MedianOfThree(arr, left, right);
+	int pivot = arr[pIdx];
 
 	int low = left+1;
 	int high = right;
+
+	Swap(arr, left, pIdx); //피벗을 가장 왼쪽으로 이동
+
+	printf("피벗 : %d \n", pivot);
 
 	while(low <= high)    // 교차되지 않을 때까지 반복
 	{
